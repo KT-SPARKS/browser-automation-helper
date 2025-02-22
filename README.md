@@ -1,5 +1,8 @@
 Sample chrome browser extension to select elements from your browser and copy details about them on a server.
 
+Read more here on in our article here:
+https://www.linkedin.com/pulse/release-open-source-concept-automation-helper-chrome-extension-bkkvf
+
 Idea is to utilize the server's scraped data inside headless browser automations like pupeteer. 
 
 To install 
