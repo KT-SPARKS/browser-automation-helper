@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Smart Web Automation Assistant",
+  "version": "1.0",
+  "description": "Extension for intelligent web page automation and element inspection",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "http://localhost:3000/*",
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "src/popup/popup.html"
+  },
+  "background": {
+    "service_worker": "src/background/background.js"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": [
+      "src/content/ElementAnalyzer.js",
+      "src/content/ElementInspector.js"
+    ],
+    "run_at": "document_idle"
+  }],
+  "web_accessible_resources": [{
+    "resources": [
+      "src/content/ElementAnalyzer.js",
+      "src/content/ElementInspector.js"
+    ],
+    "matches": ["<all_urls>"]
+  }]
+}
